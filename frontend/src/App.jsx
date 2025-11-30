@@ -163,7 +163,8 @@ function App() {
             style={{
               marginTop: "0.5rem",
               fontSize: "0.9rem",
-              color: "#555"
+              color: "#555",
+              fontStyle: "italic"
             }}
           >
             {resultsSummary}
