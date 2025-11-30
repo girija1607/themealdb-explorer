@@ -1,3 +1,5 @@
+
+
 // frontend/src/App.jsx
 import React, { useEffect, useState } from "react";
 import {
@@ -23,6 +25,7 @@ function App() {
   const [loadingMealDetail, setLoadingMealDetail] = useState(false);
   const [error, setError] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const [resultsSummary, setResultsSummary] = useState(""); 
 
   // categories load
   useEffect(() => {
@@ -61,12 +64,20 @@ function App() {
     setSelectedMeal(null);
     setLoadingMeals(true);
     setError("");
+    setResultsSummary(""); // reset
 
     try {
       const data = await searchMeals(query);
-      setMeals(data.meals || []);
+      const list = data.meals || [];
+      setMeals(list);
+      setResultsSummary(
+        list.length
+          ? `Showing ${list.length} meals for "${query}"`
+          : `No meals found for "${query}"`
+      );
     } catch {
       setError("Failed to search meals.");
+      setResultsSummary("");
     } finally {
       setLoadingMeals(false);
     }
@@ -79,12 +90,20 @@ function App() {
     setSelectedMeal(null);
     setLoadingMeals(true);
     setError("");
+    setResultsSummary(""); // reset
 
     try {
       const data = await fetchMealsByCategory(category);
-      setMeals(data.meals || []);
+      const list = data.meals || [];
+      setMeals(list);
+      setResultsSummary(
+        list.length
+          ? `Showing ${list.length} meals in category "${category}"`
+          : `No meals found in category "${category}"`
+      );
     } catch {
       setError("Failed to load meals for this category.");
+      setResultsSummary("");
     } finally {
       setLoadingMeals(false);
     }
@@ -99,6 +118,7 @@ function App() {
     setSelectedMealId(null);
     setSelectedMeal(null);
     setError("");
+    setResultsSummary(""); 
 
     try {
       const data = await fetchRandomMeal();
@@ -138,6 +158,18 @@ function App() {
 
         {error && <div style={{ color: "#c62828", marginTop: "0.5rem" }}>{error}</div>}
 
+        {resultsSummary && !error && (
+          <div
+            style={{
+              marginTop: "0.5rem",
+              fontSize: "0.9rem",
+              color: "#555"
+            }}
+          >
+            {resultsSummary}
+          </div>
+        )}
+
         {loadingMeals ? (
           <div style={{ marginTop: "1rem" }}>Loading meals...</div>
         ) : (
@@ -157,3 +189,4 @@ function App() {
 }
 
 export default App;
+
