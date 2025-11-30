@@ -1,0 +1,245 @@
+/* frontend/src/styles.css */
+
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #222;
+  background-color: #fafafa;
+}
+
+body {
+  margin: 0;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background: #ff7043;
+  color: white;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.app-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.app-main {
+  padding: 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.top-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.search-bar {
+  flex: 1;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
+.search-bar button {
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: #ff7043;
+  color: white;
+  font-weight: 600;
+}
+
+.button-secondary {
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid #ff7043;
+  background: white;
+  color: #ff7043;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button-secondary:hover,
+.search-bar button:hover {
+  opacity: 0.9;
+}
+
+.categories-container {
+  margin: 1.5rem 0;
+}
+
+.categories-scroll {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.3rem;
+}
+
+.category-pill {
+  white-space: nowrap;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  background: white;
+}
+
+.category-pill.active {
+  background: #ff7043;
+  color: white;
+  border-color: #ff7043;
+}
+
+.meal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.meal-card {
+  background: white;
+  border-radius: 0.9rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.meal-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+}
+
+.meal-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.meal-card-body {
+  padding: 0.75rem 0.9rem 0.9rem;
+}
+
+.meal-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.meal-card-subtitle {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.badge {
+  display: inline-flex;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  background: #ffe0d1;
+  color: #c6532a;
+}
+
+.meal-detail {
+  margin-top: 1rem;
+  background: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.meal-detail-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.meal-detail-header img {
+  width: 260px;
+  max-width: 100%;
+  border-radius: 0.9rem;
+}
+
+.meal-detail-meta {
+  flex: 1;
+  min-width: 220px;
+}
+
+.meal-detail-meta h2 {
+  margin-top: 0;
+}
+
+.meta-row {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+.ingredients-list {
+  columns: 2;
+  column-gap: 1.5rem;
+  font-size: 0.9rem;
+  padding-left: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .ingredients-list {
+    columns: 1;
+  }
+}
+
+.section-title {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.instructions {
+  font-size: 0.9rem;
+  white-space: pre-line;
+}
+
+.youtube-embed {
+  margin-top: 1rem;
+  aspect-ratio: 16 / 9;
+}
+
+.youtube-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.app-footer {
+  margin-top: auto;
+  padding: 0.75rem 1rem;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #888;
+}
