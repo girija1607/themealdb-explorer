@@ -2,6 +2,8 @@
 
 TheMealDB Explorer is a full-stack recipe browsing application built with **Node.js (Express)** and **React (Vite)**. It uses a custom backend layer to consume **TheMealDB public API**, implementing **in-memory caching** (5 min TTL + max 100 items) to optimize performance and reduce external requests. Users can search meals, browse by category, view full recipe details including ingredients & instructions, and watch YouTube tutorials. The UI is fully responsive and mobile-friendly.
 
+Deployed Link : https://themealdb-explorer-frontend.onrender.com/
+
 ---
 ## 🚀 Screenshot
 
@@ -111,11 +113,7 @@ https://www.themealdb.com/api.php
 
 ---
 
-## 📝 350-Character Description
 
-TheMealDB Explorer is a full-stack recipe browsing app using Node.js, Express and React. It consumes TheMealDB public API via a custom backend with in-memory caching. Features include search, category browsing, random recipes, detailed ingredients, instructions and YouTube tutorials. Fully responsive and performance optimized.
-
----
 
 ## 📤 Submission
 
